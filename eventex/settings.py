@@ -7,7 +7,7 @@ https://docs.djangoproject.com/en/1.6/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
-from dj_database_url
+import dj_database_url
 from unipath import Path
 BASE_DIR = Path(__file__).parent
 
