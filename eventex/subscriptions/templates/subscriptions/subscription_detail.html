@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+	<font color="#fff"><p><strong><a href="/">  voltar </a></strong></p>
+	<p>Parabéns {{subscription.name}},</p>
+	<p>sua inscrição foi realizada em 
+		{{ subscription.created_at|date:"d/m/Y"}}
+	</p>
+	<p>Em Breve, entraremos em contato pelo
+		{% if subscription.phone %}
+			telefone {{ subscription.phone }}
+		{% else %}
+			email {{ subscription.email }}
+		{% endif %}
+	</p></font>
+{% endblock content %}

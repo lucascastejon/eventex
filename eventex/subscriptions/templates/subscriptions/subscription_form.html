@@ -1,33 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="input-group">
 	<p><strong><a href="/">  voltar </a></strong></p>
-		<h1>Formulário de inscrição</h1>
+		<font color="#fff"><h1>Formulário de inscrição</h1></font>
 		<form  action="." method="POST">
 		{% csrf_token %}
 			<p>
-			   <!-- <label for="{{ form.name.id_for_label }}"> {{ form.name.label }}: </label> -->
+			   <!-- <font color="#fff"><label for="{{ form.name.id_for_label }}" > {{ form.name.label }}: </label></font> -->
 			   {{ form.name }}
 			   {{ form.name.errors }}
 			</p>
 			<p>
-			    <!-- <label for="{{ form.cpf.id_for_label }} ">{{ form.cpf.label }}: </label> -->
+			    <!-- <font color="#fff"><label for="{{ form.cpf.id_for_label }} ">{{ form.cpf.label }}: </label></font> -->
 			    {{ form.cpf }}
 			    {{ form.cpf.errors }}
 		  	</p>
 			<p>
-			    <!-- <label for="{{ form.email.id_for_label }}">{{ form.email.label }}: </label> -->
+			    <!-- <font color="#fff"><label for="{{ form.email.id_for_label }}">{{ form.email.label }}: </label></font> -->
 			    {{ form.email}}
 			    {{ form.email.errors }}
 			</p>
 			<p>
-			     <!-- <label for="{{ form.phone.id_for_label }}"> {{ form.phone.label }}: </label> -->
+			     <!-- <font color="#fff"><label for="{{ form.phone.id_for_label }}"> {{ form.phone.label }}: </label></font> -->
 			     {{ form.phone }}
 			     {{ form.phone.errors}}
 			</p>
 			
-			 <input type="submit" value="Enviar!" class="button">
+			 <font color="#1E90FF"><input type="submit" value="Enviar!" class="btn btn-primary btn-lg btn-block"></font>
 		</form>
-</div>
+
 {% endblock content %}
