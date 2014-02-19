@@ -1,29 +1,11 @@
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link type="image/x-icon" href="{{ STATIC_URL }}favicon.ico" rel="shortcut icon" />
- 
-  <title>EventeX - Você não pode perder</title>
- 
-  <link type="text/css" href="{{ STATIC_URL }}css/style.css" rel="stylesheet" media="screen" />
+{% extends 'base.html' %}
+{% block content %}
 
-</head>
-<body>
-  <div id="page">
-    <div id="header">
-      <center>
-        <div style="text-shadow: -1px -1px white, 1px 1px #FFB276; color:#919191; font-size: 50; ">EventeX</div>
-      </center>
-    </div>
   <h1>Bem-vindo ao <br/> <b><font size="15">EventeX!</font></b></h1>
     <div id="content" style="background:#EEEEEE; color:#DB862A; border: #fff 10px solid; padding: 10px; border-bottom-left-radius: 20px; -moz-border-radius-bottomleft: 20px; -webkit-border-bottom-left-radius: 20px; border-top-right-radius: 20px; -moz-border-radius-topright: 20px; -webkit-border-top-right-radius: 20px;">
           <p>O evento mais sensacional do ano depois do Dev in Rio!</p>
           <p>Você não pode perder esta oportunidade!</p>
-          <p><strong><b>Abertura das inscrições no próximo domingo.</b></strong></p>
+          <p><strong><a href="/inscricao/"> Inscreva-se já!</a></strong></p>
           <p>Para dúvidas e mais informações entre em contato com <a href="mailto:eventex@eventex.com.br">eventex@eventex.com.br</a></p>
     </div>
-    
-    <div id="footer">
-      <p>&copy; 2014. <a rel="license" href="http://eventex.herike.com">EventeX</a>, todos os direitos reservados. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/br/80x15.png" /></a><a href="http://www.djangoproject.com/" id="django"><img src="https://djangoproject.com/s/img/badges/djangosite100x25.gif" border="0" alt="A Django site." title="A Django site." /></a></p>
-    </div>
-  </div>
-</body>
-</html>
+{% endblock content %}
