@@ -1,6 +1,6 @@
 # coding: utf-8
 from django.test import TestCase
-from eventex.subscriptions.SubscriptionForm
+from eventex.subscriptions.forms import SubscriptionForm
 
 class SubscriptionFormTest(TestCase):
 	'Form must have 4 Fields'
