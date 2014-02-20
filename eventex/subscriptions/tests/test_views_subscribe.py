@@ -2,11 +2,11 @@
 from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
 from django.test import TestCase
-
+from django.core.urlresolvers import reverse as r
 
 class SubscribeTest(TestCase):
     def setUp(self):
-    	self.resp = self.client.get('/inscricao/')
+    	self.resp = self.client.get(r('subscriptions:subscribe'))
 
     def test_get(self):
     	'GET /inscricao/ must return status code 200.'
@@ -14,8 +14,7 @@ class SubscribeTest(TestCase):
 
     def test_template(self):
     	'Response should be a rendered template.'
-    	self.assertTemplateUsed(self.resp,
-    		'subscriptions/subscription_form.html')
+    	self.assertTemplateUsed(self.resp, 'subscriptions/subscription_form.html')
 
     def test_html(self):
     	'HTML must contain input controls'
@@ -46,7 +45,7 @@ class SubscribePostTest(TestCase):
                      cpf='41725136899',
                      email='lucascastejon@gmail.com',
                      phone='16-993353325')
-        self.resp = self.client.post('/inscricao/', data)
+        self.resp = self.client.post(r('subscriptions:subscribe'), data)
 
     def test_post(self):
         'Valid POST should redirect to /inscricao/1/'
@@ -63,7 +62,7 @@ class SubscribeInvalidPostText(TestCase):
                     cpf='417251368990',
                     email='lucascastejon@gmail.com',
                     phone='16-993353325')
-        self.resp = self.client.post('/inscricao/', data)
+        self.resp = self.client.post(r('subscriptions:subscribe'), data)
 
     def test_post(self):
         'Invalid POST should not redirect'
