@@ -6,7 +6,7 @@ from django.utils.datetime_safe import datetime #buscar quem foi cadastrado "hoj
 # Register your models here.
 
 class SubscriptionAdmin(admin.ModelAdmin):
-	list_display = ('name', 'email','cpf','phone', 'created_at','subscribed_today')
+	list_display = ('name', 'email','cpf','phone', 'created_at','subscribed_today','paid')
 	date_hierarchy = 'created_at' #necessário instalar o pytz (sudo pip isntall pytz)
 	search_fields = ('name','cpf', 'email','phone', 'created_at')
 	list_filter = ['created_at']

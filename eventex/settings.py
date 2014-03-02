@@ -1,3 +1,4 @@
+# coding: utf-8
 """
 Django settings for eventex project.
 
@@ -12,6 +13,11 @@ from dj_database_url import parse as db_url
 from unipath import Path
 BASE_DIR = Path(__file__).parent
 
+SOUTH_TESTS_MIGRATE = False
+#Usar o South para preparar o banco nos testes?
+#True: Sim,(Default)
+# false Não! Use o Syncdb
+
 SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -24,12 +30,14 @@ ALLOWED_HOSTS = ['.localhost','127.0.0.1','.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = (
+    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
     'eventex.core',
     'eventex.subscriptions',
 )

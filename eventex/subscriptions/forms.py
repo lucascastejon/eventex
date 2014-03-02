@@ -7,6 +7,7 @@ from django.utils.translation import ugettext as _
 class SubscriptionForm(forms.ModelForm):
 	class Meta:
 		model = Subscription
+		exclude = ('paid',) # Segurança
 		widgets = {
 			'name': TextInput(attrs={'class':'form-control', 'placeholder':_('Nome'), 'type':'text'}),
 			'cpf': TextInput(attrs={'class':'form-control', 'placeholder':_('CPF')}),
